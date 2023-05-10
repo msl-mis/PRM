@@ -17,13 +17,13 @@ function CustomerSaveCheck_Head(tStatus)
 				var tmoney01Value = $('#money01_txt').val().trim();
 				if(tmoney01Value.length==0 || isNaN(tmoney01Value))
 				{
-					tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money01', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money01_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
+					tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money01', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money01_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
 				}
 				else
 				{
 					if (tmoney01Value < 0 || tmoney01Value > 1000000000)
 					{
-						tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money01', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money01_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
+						tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money01', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money01_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
 					}
 				}
 			}
@@ -37,53 +37,33 @@ function CustomerSaveCheck_Head(tStatus)
 				var tmoney02Value = $('#money02_txt').val().trim();
 				if(tmoney02Value.length==0 || isNaN(tmoney02Value))
 				{
-					tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money02', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money02_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
+					tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money02', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money02_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
 				}
 				else
 				{
 					if (tmoney02Value < 0 || tmoney02Value > 1000000000)
 					{
-						tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money02', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money02_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
+						tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money02', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money02_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
 					}
 				}
 			}
 		}
 
 		//數值驗証
-		var tmoney04 = $('#money04_txt');
-		if(tmoney04.length>0){
-			if('readonly' !== tmoney04.attr('readonly') &&
-				'disabled' !== tmoney04.attr('disabled')){
-				var tmoney04Value = $('#money04_txt').val().trim();
-				if(tmoney04Value.length==0 || isNaN(tmoney04Value))
+		var tmoney03 = $('#money03_txt');
+		if(tmoney03.length>0){
+			if('readonly' !== tmoney03.attr('readonly') &&
+				'disabled' !== tmoney03.attr('disabled')){
+				var tmoney03Value = $('#money03_txt').val().trim();
+				if(tmoney03Value.length==0 || isNaN(tmoney03Value))
 				{
-					tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money04', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money04_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
+					tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money03', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money03_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
 				}
 				else
 				{
-					if (tmoney04Value < 0 || tmoney04Value > 1000000000)
+					if (tmoney03Value < 0 || tmoney03Value > 1000000000)
 					{
-						tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money04', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money04_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
-					}
-				}
-			}
-		}
-
-		//數值驗証
-		var tmoney05 = $('#money05_txt');
-		if(tmoney05.length>0){
-			if('readonly' !== tmoney05.attr('readonly') &&
-				'disabled' !== tmoney05.attr('disabled')){
-				var tmoney05Value = $('#money05_txt').val().trim();
-				if(tmoney05Value.length==0 || isNaN(tmoney05Value))
-				{
-					tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money05', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money05_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
-				}
-				else
-				{
-					if (tmoney05Value < 0 || tmoney05Value > 1000000000)
-					{
-						tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money05', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money05_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
+						tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money03', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money03_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
 					}
 				}
 			}
@@ -95,13 +75,13 @@ function CustomerSaveCheck_Head(tStatus)
 			var tmtotalValue = $('#mtotal_txt').val().trim();
 			if(tmtotalValue.length==0 || isNaN(tmtotalValue))
 			{
-				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'mtotal', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'mtotal_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
+				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'mtotal', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'mtotal_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
 			}
 			else
 			{
 				if (tmtotalValue < 0 || tmtotalValue > 1000000000)
 				{
-					tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'mtotal', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'mtotal_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
+					tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'mtotal', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'mtotal_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
 				}
 			}
 		}
@@ -109,12 +89,7 @@ function CustomerSaveCheck_Head(tStatus)
 		//Radio Button 驗証
 			if ($('#chpay_txt').length>0 && document.getElementById('chpay_txt').value == '')
 			{
-				tErr += getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'chpay_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
-			}
-		//Radio Button 驗証
-			if ($('#kind_txt').length>0 && document.getElementById('kind_txt').value == '')
-			{
-				tErr += getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'kind_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
+				tErr += getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'chpay_Err', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+ '\r\n';
 			}
 
 	}
@@ -131,7 +106,7 @@ function CustomerSaveCheck_Head(tStatus)
 		var tdatetime1Value = $('#datetime1_txt').val().trim();
 		if (tdatetime1Value.length==0){
 			//欄位不允許空白 !
-			tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'datetime1', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFieldNotFilledMsg + '\r\n';
+			tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'datetime1', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFieldNotFilledMsg + '\r\n';
 		}
 	}
 
@@ -141,7 +116,7 @@ function CustomerSaveCheck_Head(tStatus)
 		var tdeptValue = $('#dept_txt').val().trim();
 		if (tdeptValue.length==0){
 			//欄位不允許空白 !
-			tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'dept', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFieldNotFilledMsg + '\r\n';
+			tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'dept', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFieldNotFilledMsg + '\r\n';
 		}
 	}
 
@@ -152,7 +127,7 @@ function CustomerSaveCheck_Head(tStatus)
 		if (tinv01Value.length>0){
 			if(!/^-?\d+$/.test(tinv01Value)){
 				//輸入的資料不符合int數值格式 !
-				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'inv01', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tIntErrMsg + '\r\n';
+				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'inv01', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tIntErrMsg + '\r\n';
 			}
 		}
 	}
@@ -164,7 +139,7 @@ function CustomerSaveCheck_Head(tStatus)
 		if (tinv02Value.length>0){
 			if(!/^-?\d+$/.test(tinv02Value)){
 				//輸入的資料不符合int數值格式 !
-				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'inv02', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tIntErrMsg + '\r\n';
+				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'inv02', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tIntErrMsg + '\r\n';
 			}
 		}
 	}
@@ -175,7 +150,7 @@ function CustomerSaveCheck_Head(tStatus)
 		var tmoney01Value = $('#money01_txt').val().trim();
 		if (tmoney01Value.length==0){
 			//欄位不允許空白 !
-			tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money01', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFieldNotFilledMsg + '\r\n';
+			tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money01', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFieldNotFilledMsg + '\r\n';
 		}
 	}
 
@@ -186,7 +161,7 @@ function CustomerSaveCheck_Head(tStatus)
 		if (tmoney01Value.length>0){
 			if(!/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(tmoney01Value)){
 				//輸入的資料不符合float數值格式 !
-				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money01', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
+				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money01', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
 			}
 			else{
 				tmoney01Value=tmoney01Value.replace(/\,/g,'');
@@ -202,7 +177,7 @@ function CustomerSaveCheck_Head(tStatus)
 		if (tmoney02Value.length>0){
 			if(!/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(tmoney02Value)){
 				//輸入的資料不符合float數值格式 !
-				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money02', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
+				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money02', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
 			}
 			else{
 				tmoney02Value=tmoney02Value.replace(/\,/g,'');
@@ -218,7 +193,7 @@ function CustomerSaveCheck_Head(tStatus)
 		if (tmoney03Value.length>0){
 			if(!/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(tmoney03Value)){
 				//輸入的資料不符合float數值格式 !
-				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money03', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
+				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money03', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
 			}
 			else{
 				tmoney03Value=tmoney03Value.replace(/\,/g,'');
@@ -234,7 +209,7 @@ function CustomerSaveCheck_Head(tStatus)
 		if (tmoney04Value.length>0){
 			if(!/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(tmoney04Value)){
 				//輸入的資料不符合float數值格式 !
-				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money04', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
+				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money04', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
 			}
 			else{
 				tmoney04Value=tmoney04Value.replace(/\,/g,'');
@@ -250,7 +225,7 @@ function CustomerSaveCheck_Head(tStatus)
 		if (tmoney05Value.length>0){
 			if(!/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(tmoney05Value)){
 				//輸入的資料不符合float數值格式 !
-				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money05', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
+				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money05', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
 			}
 			else{
 				tmoney05Value=tmoney05Value.replace(/\,/g,'');
@@ -266,7 +241,7 @@ function CustomerSaveCheck_Head(tStatus)
 		if (tmtotalValue.length>0){
 			if(!/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(tmtotalValue)){
 				//輸入的資料不符合float數值格式 !
-				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'mtotal', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
+				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'mtotal', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
 			}
 			else{
 				tmtotalValue=tmtotalValue.replace(/\,/g,'');
@@ -281,7 +256,7 @@ function CustomerSaveCheck_Head(tStatus)
 		var tpayeeValue = $('#payee_txt').val().trim();
 		if (tpayeeValue.length==0){
 			//欄位不允許空白 !
-			tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'payee', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFieldNotFilledMsg + '\r\n';
+			tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'payee', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFieldNotFilledMsg + '\r\n';
 		}
 	}
 
@@ -291,7 +266,7 @@ function CustomerSaveCheck_Head(tStatus)
 		var ttextarea1Value = $('#textarea1_txt').val().trim();
 		if (ttextarea1Value.length==0){
 			//欄位不允許空白 !
-			tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'textarea1', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFieldNotFilledMsg + '\r\n';
+			tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'textarea1', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFieldNotFilledMsg + '\r\n';
 		}
 	}
 
@@ -301,7 +276,7 @@ function CustomerSaveCheck_Head(tStatus)
 		var tusernameValue = $('#username_txt').val().trim();
 		if (tusernameValue.length==0){
 			//欄位不允許空白 !
-			tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'username', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFieldNotFilledMsg + '\r\n';
+			tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'username', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFieldNotFilledMsg + '\r\n';
 		}
 	}
 
@@ -333,7 +308,7 @@ function DraftSaveCheck(){
 		if (tinv01Value.length>0){
 			if(!/^-?\d+$/.test(tinv01Value)){
 				//輸入的資料不符合int數值格式 !
-				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'inv01', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tIntErrMsg + '\r\n';
+				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'inv01', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tIntErrMsg + '\r\n';
 			}
 		}
 	}
@@ -345,7 +320,7 @@ function DraftSaveCheck(){
 		if (tinv02Value.length>0){
 			if(!/^-?\d+$/.test(tinv02Value)){
 				//輸入的資料不符合int數值格式 !
-				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'inv02', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tIntErrMsg + '\r\n';
+				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'inv02', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tIntErrMsg + '\r\n';
 			}
 		}
 	}
@@ -357,7 +332,7 @@ function DraftSaveCheck(){
 		if (tmoney01Value.length>0){
 			if(!/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(tmoney01Value)){
 				//輸入的資料不符合float數值格式 !
-				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money01', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
+				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money01', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
 			}
 			else{
 				tmoney01Value=tmoney01Value.replace(/\,/g,'');
@@ -373,7 +348,7 @@ function DraftSaveCheck(){
 		if (tmoney02Value.length>0){
 			if(!/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(tmoney02Value)){
 				//輸入的資料不符合float數值格式 !
-				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money02', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
+				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money02', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
 			}
 			else{
 				tmoney02Value=tmoney02Value.replace(/\,/g,'');
@@ -389,7 +364,7 @@ function DraftSaveCheck(){
 		if (tmoney03Value.length>0){
 			if(!/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(tmoney03Value)){
 				//輸入的資料不符合float數值格式 !
-				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money03', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
+				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money03', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
 			}
 			else{
 				tmoney03Value=tmoney03Value.replace(/\,/g,'');
@@ -405,7 +380,7 @@ function DraftSaveCheck(){
 		if (tmoney04Value.length>0){
 			if(!/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(tmoney04Value)){
 				//輸入的資料不符合float數值格式 !
-				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money04', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
+				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money04', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
 			}
 			else{
 				tmoney04Value=tmoney04Value.replace(/\,/g,'');
@@ -421,7 +396,7 @@ function DraftSaveCheck(){
 		if (tmoney05Value.length>0){
 			if(!/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(tmoney05Value)){
 				//輸入的資料不符合float數值格式 !
-				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'money05', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
+				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'money05', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
 			}
 			else{
 				tmoney05Value=tmoney05Value.replace(/\,/g,'');
@@ -437,7 +412,7 @@ function DraftSaveCheck(){
 		if (tmtotalValue.length>0){
 			if(!/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/.test(tmtotalValue)){
 				//輸入的資料不符合float數值格式 !
-				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'mtotal', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
+				tErr += '「' + getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'mtotal', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx') + '」  ' + tFloatErrMsg + '\r\n';
 			}
 			else{
 				tmtotalValue=tmtotalValue.replace(/\,/g,'');
@@ -541,12 +516,12 @@ function InitTriggerMust(tStatus){
 			}
 		}
 
-		if($("#chkitem05_chk").length>0){
-			if($("#chkitem05_chk")[0].checked){
-				$("#chkother").show();
+		if($("#chkatt03_chk").length>0){
+			if($("#chkatt03_chk")[0].checked){
+				$("#orderno").show();
 			}
 			else{
-				$("#chkother").hide();
+				$("#orderno").hide();
 			}
 		}
 
@@ -568,151 +543,20 @@ function InitTriggerMust(tStatus){
 			}
 		}
 
+		if($("#rdtc_ctrolRadio4").length>0){
+			if($("#rdtc_ctrolRadio4")[0].checked){
+				$("#chkother").show();
+			}
+			else{
+				$("#chkother").hide();
+			}
+		}
+
 
 	}
 }
 
 function InitTriggerOpen(){
-	if($("#opentype01_txt").length>0){
-		if($("#opentype01_txt").val()==""){
-			$('#openitem01_txt')[0].style.backgroundColor='#deecea';
-			$('#openitem01_txt').val("");
-			$('#openitem01_txt2').text("");
-			if(!$('#openitem01_txt').attr("disabled"))
-			{
-				$('#openitem01_txt').prop("disabled",true);
-				$('#openitem01_btn').prop("disabled",true);
-				$('#openitem01_btn').css("cursor","default");
-				$('#openitem01_btn').css("pointer-events","none");
-			}
-		}
-		else{
-			$('#openitem01_txt')[0].style.backgroundColor='white';
-			if($('#openitem01_txt').hasClass("PL_ReadOnly")){
-				$('#openitem01_txt')[0].style.backgroundColor='#deecea';
-			}
-			else if($('#openitem01_txt').attr("disabled"))
-			{
-				$('#openitem01_txt').prop("disabled",false);
-				$('#openitem01_btn').prop("disabled",false);
-				$('#openitem01_btn').css("cursor","pointer");
-				$('#openitem01_btn').css("pointer-events","auto");
-			}
-		}
-	}
-
-	if($("#opentype02_txt").length>0){
-		if($("#opentype02_txt").val()==""){
-			$('#openitem02_txt')[0].style.backgroundColor='#deecea';
-			$('#openitem02_txt').val("");
-			$('#openitem02_txt2').text("");
-			if(!$('#openitem02_txt').attr("disabled"))
-			{
-				$('#openitem02_txt').prop("disabled",true);
-				$('#openitem02_btn').prop("disabled",true);
-				$('#openitem02_btn').css("cursor","default");
-				$('#openitem02_btn').css("pointer-events","none");
-			}
-		}
-		else{
-			$('#openitem02_txt')[0].style.backgroundColor='white';
-			if($('#openitem02_txt').hasClass("PL_ReadOnly")){
-				$('#openitem02_txt')[0].style.backgroundColor='#deecea';
-			}
-			else if($('#openitem02_txt').attr("disabled"))
-			{
-				$('#openitem02_txt').prop("disabled",false);
-				$('#openitem02_btn').prop("disabled",false);
-				$('#openitem02_btn').css("cursor","pointer");
-				$('#openitem02_btn').css("pointer-events","auto");
-			}
-		}
-	}
-
-	if($("#opentype03_txt").length>0){
-		if($("#opentype03_txt").val()==""){
-			$('#openitem03_txt')[0].style.backgroundColor='#deecea';
-			$('#openitem03_txt').val("");
-			$('#openitem03_txt2').text("");
-			if(!$('#openitem03_txt').attr("disabled"))
-			{
-				$('#openitem03_txt').prop("disabled",true);
-				$('#openitem03_btn').prop("disabled",true);
-				$('#openitem03_btn').css("cursor","default");
-				$('#openitem03_btn').css("pointer-events","none");
-			}
-		}
-		else{
-			$('#openitem03_txt')[0].style.backgroundColor='white';
-			if($('#openitem03_txt').hasClass("PL_ReadOnly")){
-				$('#openitem03_txt')[0].style.backgroundColor='#deecea';
-			}
-			else if($('#openitem03_txt').attr("disabled"))
-			{
-				$('#openitem03_txt').prop("disabled",false);
-				$('#openitem03_btn').prop("disabled",false);
-				$('#openitem03_btn').css("cursor","pointer");
-				$('#openitem03_btn').css("pointer-events","auto");
-			}
-		}
-	}
-
-	if($("#opentype04_txt").length>0){
-		if($("#opentype04_txt").val()==""){
-			$('#openitem04_txt')[0].style.backgroundColor='#deecea';
-			$('#openitem04_txt').val("");
-			$('#openitem04_txt2').text("");
-			if(!$('#openitem04_txt').attr("disabled"))
-			{
-				$('#openitem04_txt').prop("disabled",true);
-				$('#openitem04_btn').prop("disabled",true);
-				$('#openitem04_btn').css("cursor","default");
-				$('#openitem04_btn').css("pointer-events","none");
-			}
-		}
-		else{
-			$('#openitem04_txt')[0].style.backgroundColor='white';
-			if($('#openitem04_txt').hasClass("PL_ReadOnly")){
-				$('#openitem04_txt')[0].style.backgroundColor='#deecea';
-			}
-			else if($('#openitem04_txt').attr("disabled"))
-			{
-				$('#openitem04_txt').prop("disabled",false);
-				$('#openitem04_btn').prop("disabled",false);
-				$('#openitem04_btn').css("cursor","pointer");
-				$('#openitem04_btn').css("pointer-events","auto");
-			}
-		}
-	}
-
-	if($("#opentype05_txt").length>0){
-		if($("#opentype05_txt").val()==""){
-			$('#openitem05_txt')[0].style.backgroundColor='#deecea';
-			$('#openitem05_txt').val("");
-			$('#openitem05_txt2').text("");
-			if(!$('#openitem05_txt').attr("disabled"))
-			{
-				$('#openitem05_txt').prop("disabled",true);
-				$('#openitem05_btn').prop("disabled",true);
-				$('#openitem05_btn').css("cursor","default");
-				$('#openitem05_btn').css("pointer-events","none");
-			}
-		}
-		else{
-			$('#openitem05_txt')[0].style.backgroundColor='white';
-			if($('#openitem05_txt').hasClass("PL_ReadOnly")){
-				$('#openitem05_txt')[0].style.backgroundColor='#deecea';
-			}
-			else if($('#openitem05_txt').attr("disabled"))
-			{
-				$('#openitem05_txt').prop("disabled",false);
-				$('#openitem05_btn').prop("disabled",false);
-				$('#openitem05_btn').css("cursor","pointer");
-				$('#openitem05_btn').css("pointer-events","auto");
-			}
-		}
-	}
-
 
 }
 
@@ -731,141 +575,6 @@ function CreateOption(pValue,pText,objselect)
 	var new_option = new Option(pText,pValue);
 	objselect.options.add(new_option);
 }
-
-function FunOnChange_opentype01()
-{
-	var evt = (event)?event:window.event;
-	var element=evt.srcElement || evt.target;
-	//如果是透過 automimj 不觸發
-	if (element != null && element.id != null)
-	{
-		$('#openitem01_txt').val("");
-		$('#openitem01_txt2').text("");
-	}
-}//EndFun_FunOnChange_opentype01()
-
-function FunCheckIsChanged_opentype01()
-{
-	var PreSetValue = $('#hdnOpenQueryPreSetValue').val();
-	if(PreSetValue.length>0){
-		var aryPreSetValue = PreSetValue.split('§');
-		if(aryPreSetValue.length>1){
-			if("opentype01" == aryPreSetValue[0] && $('#opentype01_txt').val() != aryPreSetValue[1])
-				FunOnChange_opentype01();
-		}
-	}
-	else{
-		FunOnChange_opentype01();
-	}
-}//EndFun_FunCheckIsChanged_opentype01()
-
-function FunOnChange_opentype02()
-{
-	var evt = (event)?event:window.event;
-	var element=evt.srcElement || evt.target;
-	//如果是透過 automimj 不觸發
-	if (element != null && element.id != null)
-	{
-		$('#openitem02_txt').val("");
-		$('#openitem02_txt2').text("");
-	}
-}//EndFun_FunOnChange_opentype02()
-
-function FunCheckIsChanged_opentype02()
-{
-	var PreSetValue = $('#hdnOpenQueryPreSetValue').val();
-	if(PreSetValue.length>0){
-		var aryPreSetValue = PreSetValue.split('§');
-		if(aryPreSetValue.length>1){
-			if("opentype02" == aryPreSetValue[0] && $('#opentype02_txt').val() != aryPreSetValue[1])
-				FunOnChange_opentype02();
-		}
-	}
-	else{
-		FunOnChange_opentype02();
-	}
-}//EndFun_FunCheckIsChanged_opentype02()
-
-function FunOnChange_opentype03()
-{
-	var evt = (event)?event:window.event;
-	var element=evt.srcElement || evt.target;
-	//如果是透過 automimj 不觸發
-	if (element != null && element.id != null)
-	{
-		$('#openitem03_txt').val("");
-		$('#openitem03_txt2').text("");
-	}
-}//EndFun_FunOnChange_opentype03()
-
-function FunCheckIsChanged_opentype03()
-{
-	var PreSetValue = $('#hdnOpenQueryPreSetValue').val();
-	if(PreSetValue.length>0){
-		var aryPreSetValue = PreSetValue.split('§');
-		if(aryPreSetValue.length>1){
-			if("opentype03" == aryPreSetValue[0] && $('#opentype03_txt').val() != aryPreSetValue[1])
-				FunOnChange_opentype03();
-		}
-	}
-	else{
-		FunOnChange_opentype03();
-	}
-}//EndFun_FunCheckIsChanged_opentype03()
-
-function FunOnChange_opentype04()
-{
-	var evt = (event)?event:window.event;
-	var element=evt.srcElement || evt.target;
-	//如果是透過 automimj 不觸發
-	if (element != null && element.id != null)
-	{
-		$('#openitem04_txt').val("");
-		$('#openitem04_txt2').text("");
-	}
-}//EndFun_FunOnChange_opentype04()
-
-function FunCheckIsChanged_opentype04()
-{
-	var PreSetValue = $('#hdnOpenQueryPreSetValue').val();
-	if(PreSetValue.length>0){
-		var aryPreSetValue = PreSetValue.split('§');
-		if(aryPreSetValue.length>1){
-			if("opentype04" == aryPreSetValue[0] && $('#opentype04_txt').val() != aryPreSetValue[1])
-				FunOnChange_opentype04();
-		}
-	}
-	else{
-		FunOnChange_opentype04();
-	}
-}//EndFun_FunCheckIsChanged_opentype04()
-
-function FunOnChange_opentype05()
-{
-	var evt = (event)?event:window.event;
-	var element=evt.srcElement || evt.target;
-	//如果是透過 automimj 不觸發
-	if (element != null && element.id != null)
-	{
-		$('#openitem05_txt').val("");
-		$('#openitem05_txt2').text("");
-	}
-}//EndFun_FunOnChange_opentype05()
-
-function FunCheckIsChanged_opentype05()
-{
-	var PreSetValue = $('#hdnOpenQueryPreSetValue').val();
-	if(PreSetValue.length>0){
-		var aryPreSetValue = PreSetValue.split('§');
-		if(aryPreSetValue.length>1){
-			if("opentype05" == aryPreSetValue[0] && $('#opentype05_txt').val() != aryPreSetValue[1])
-				FunOnChange_opentype05();
-		}
-	}
-	else{
-		FunOnChange_opentype05();
-	}
-}//EndFun_FunCheckIsChanged_opentype05()
 
 
 
@@ -887,7 +596,7 @@ function getMoneyWord(pNumberContrlID, pDecimalPlaces, pWordControlID)
 			else{
 				//這裡使用者如果輸入超過16進位的數值，就會失真！
 				//tControlNumValue = parseFloat(tControlNumValue).toFixed(pDecimalPlaces);
-				tControlNumValue = tw.com.dsc.easyflowDotNet.program.MAWIODMFPAYCN03.ajaxGetFixedNum(tControlNumValue, pDecimalPlaces).value;
+				tControlNumValue = tw.com.dsc.easyflowDotNet.program.MAWIODMFPAYMVE01.ajaxGetFixedNum(tControlNumValue, pDecimalPlaces).value;
 
 				$('#'+pNumberContrlID+'_txt').val(tControlNumValue);
 				var iIntegerSTR="";
@@ -922,7 +631,7 @@ function getMoneyWord(pNumberContrlID, pDecimalPlaces, pWordControlID)
 				return false;
 			}
 
-			var tControlWordValue = tw.com.dsc.easyflowDotNet.program.MAWIODMFPAYCN03.ajaxGetMoneyWord(tControlNumValue).value;
+			var tControlWordValue = tw.com.dsc.easyflowDotNet.program.MAWIODMFPAYMVE01.ajaxGetMoneyWord(tControlNumValue).value;
 			$('#'+pWordControlID+'_txt').val(tControlWordValue);
 		}
 		//2015/09/14;3.7.3.19;hiro;V00-20150914007;修正數值轉大寫，數值為空白時，沒有一併清空轉大寫欄位↓
@@ -946,8 +655,7 @@ function SetCustomSubject()
 	var tSubjectVal='';
 	var tSubjectTxt=document.getElementById("MasterPage_txtCreateToolSubject_txt").value;
 	var tSubjectSelf='';
-	tSubjectSelf+='CN一般請款單V3-'+
-$('#payee_txt').val();
+	tSubjectSelf+='MVE請款單-';
 
 	//自訂主旨+標準主旨
 	tSubjectVal=tSubjectSelf+tSubjectTxt;
@@ -1044,7 +752,7 @@ function chkTriggerFieldNull_Head()
 	if($("#chkatt01_chk").length>0){
 		if($("#chkatt01_chk")[0].checked){
 			if($("#inv01_txt").val().trim().length==0){
-				tErr+='[inv01-'+getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'inv01', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+']'+tFieldNotFilledMsg+'\r\n';
+				tErr+='[inv01-'+getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'inv01', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+']'+tFieldNotFilledMsg+'\r\n';
 			}
 		}
 		else{
@@ -1055,7 +763,7 @@ function chkTriggerFieldNull_Head()
 	if($("#chkatt02_chk").length>0){
 		if($("#chkatt02_chk")[0].checked){
 			if($("#inv02_txt").val().trim().length==0){
-				tErr+='[inv02-'+getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'inv02', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+']'+tFieldNotFilledMsg+'\r\n';
+				tErr+='[inv02-'+getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'inv02', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+']'+tFieldNotFilledMsg+'\r\n';
 			}
 		}
 		else{
@@ -1063,21 +771,21 @@ function chkTriggerFieldNull_Head()
 		}
 	}
 
-	if($("#chkitem05_chk").length>0){
-		if($("#chkitem05_chk")[0].checked){
-			if($("#chkother_txt").val().trim().length==0){
-				tErr+='[chkother-'+getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'chkother', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+']'+tFieldNotFilledMsg+'\r\n';
+	if($("#chkatt03_chk").length>0){
+		if($("#chkatt03_chk")[0].checked){
+			if($("#orderno_txt").val().trim().length==0){
+				tErr+='[orderno-'+getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'orderno', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+']'+tFieldNotFilledMsg+'\r\n';
 			}
 		}
 		else{
-			$("#chkother_txt").val('');
+			$("#orderno_txt").val('');
 		}
 	}
 
 	if($("#other_chk").length>0){
 		if($("#other_chk")[0].checked){
 			if($("#attother_txt").val().trim().length==0){
-				tErr+='[attother-'+getI18NForSpecial('FD', 'MAWIODMFPAYCN03', 'attother', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+']'+tFieldNotFilledMsg+'\r\n';
+				tErr+='[attother-'+getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'attother', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+']'+tFieldNotFilledMsg+'\r\n';
 			}
 		}
 		else{
@@ -1093,6 +801,17 @@ function chkTriggerFieldNull_Head()
 		}
 		else{
 			$("#payother_txt").val('');
+		}
+	}
+
+	if($("#rdtc_ctrolRadio4").length>0){
+		if($("#rdtc_ctrolRadio4")[0].checked){
+			if($("#chkother_txt").val().trim().length==0){
+				tErr+='[chkother-'+getI18NForSpecial('FD', 'MAWIODMFPAYMVE01', 'chkother', '../../_Common/PlatformUtil/KernelPage/I18N/I18NForJs.aspx')+']'+tFieldNotFilledMsg+'\r\n';
+			}
+		}
+		else{
+			$("#chkother_txt").val('');
 		}
 	}
 
@@ -1151,7 +870,7 @@ function jsDoDispatch(pFormID, pSheetNo, pDispatchFormID){
 	//若您已有編輯此表單資料, 此動作會清除您所編輯的資料! [請問是否繼續?
 	var tConfirmSTR = getI18NForSpecial('FD','EFBaseMasterPage','EFMsgBoxJS007','../../../src/_Common/PlatFormUtil/KernelPage/I18N/I18NForJs.aspx');
 	if(window.confirm(tConfirmSTR.split('[')[0].toString() + "\r\n\r\n" + tConfirmSTR.split('[')[1].toString())){
-		var bResult = tw.com.dsc.easyflowDotNet.program.MAWIODMFPAYCN03.ajaxDoDispatchForm(pFormID, pSheetNo, pDispatchFormID).value;
+		var bResult = tw.com.dsc.easyflowDotNet.program.MAWIODMFPAYMVE01.ajaxDoDispatchForm(pFormID, pSheetNo, pDispatchFormID).value;
 		var tDispatchFormResult="";
 		if(bResult){
 			//執行派送表單成功!
@@ -1169,26 +888,3 @@ function jsDoDispatch(pFormID, pSheetNo, pDispatchFormID){
 }
 
 
-//20230510 Peggy 在這裡做條件判斷, 在aspx 引用OEMSetControl.js
-//勾選chkitem02時,才顯示radioButton要勾選
-function openRadio() {
-		var _chkitem02 = document.getElementById("chkitem02_chk").checked;
-	
-	if (_chkitem02) {
-		OEMTurnningOnOff("On", "chkven_ctrolRadio0,chkven_ctrolRadio1,orderno_txt,useyear_txt", false);
-		//$("#MasterPage_MasterPageContent_orderno_txt").show();
-	}
-	else {
-		document.getElementById("chkven_ctrolRadio0").checked = false;
-		document.getElementById("chkven_ctrolRadio1").checked = false;
-		document.getElementById("chkven_txt").value = "";
-		document.getElementById("orderno_txt").value = "";
-		document.getElementById("useyear_txt").value = "";
-
-		OEMTurnningOnOff("Off", "chkven_ctrolRadio0,chkven_ctrolRadio1,orderno_txt,useyear_txt");
-		/*	$("#MasterPage_MasterPageContent_orderno_txt").hide();*/
-
-	}
-}
-
-//20230510 Peggy End

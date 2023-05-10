@@ -32,9 +32,9 @@ using System.Data.Odbc;
 namespace tw.com.dsc.easyflowDotNet.program
 {
 	/// <summary>
-	/// MAWIODMFPAYCN03 的摘要描述。
+	/// MAWIODMFPAYMVE01 的摘要描述。
 	/// </summary>
-	public partial class MAWIODMFPAYCN03 : tw.com.dsc.easyflowDotNet.kernelBasePage.EFProgramBasePage
+	public partial class MAWIODMFPAYMVE01 : tw.com.dsc.easyflowDotNet.kernelBasePage.EFProgramBasePage
 	{
 		#region 讀取 sysba 參數設定用物件
 		/// <summary>
@@ -66,18 +66,18 @@ namespace tw.com.dsc.easyflowDotNet.program
 		protected string PageTitle;
 		protected void Page_Load(object sender, System.EventArgs e)
 		{
-			AjaxPro.Utility.RegisterTypeForAjax(typeof(MAWIODMFPAYCN03));
+			AjaxPro.Utility.RegisterTypeForAjax(typeof(MAWIODMFPAYMVE01));
 			//隱藏span
 			Page.Response.Expires = 0;
 
 			//頁籤的多國語系
 			UserInfoClass objUserInfo = (UserInfoClass)Session["UserInfo"];
 			string tLanguageType = objUserInfo.Language;
-			this.TabStrip1.Items[0].Text = MultiLanguage.GetComment("FD", "MAWIODMFPAYCN03", "TabStrip1", tLanguageType);
-			this.lblTitle.Text = MultiLanguage.GetComment("FD", "MAWIODMFPAYCN03", "lblTitle", tLanguageType);
+			this.TabStrip1.Items[0].Text = MultiLanguage.GetComment("FD", "MAWIODMFPAYMVE01", "TabStrip1", tLanguageType);
+			this.lblTitle.Text = MultiLanguage.GetComment("FD", "MAWIODMFPAYMVE01", "lblTitle", tLanguageType);
 
 			//頁籤的多國語系
-						string tHeadTabStrip01Text = MultiLanguage.GetComment("FD", "MAWIODMFPAYCN03", "HeadTabStrip01", tLanguageType);
+						string tHeadTabStrip01Text = MultiLanguage.GetComment("FD", "MAWIODMFPAYMVE01", "HeadTabStrip01", tLanguageType);
 			if(tHeadTabStrip01Text.Length>4){
 				this.TabStrip1.Items[0].Text = tHeadTabStrip01Text.Substring(0,4)+"..";
 				this.TabStrip1.Items[0].ToolTip = tHeadTabStrip01Text;
@@ -88,19 +88,15 @@ namespace tw.com.dsc.easyflowDotNet.program
 
 
 			//程式title
-			string tProgramTitle = MultiLanguage.GetComment("FD", "MAWIODMFPAYCN03", "lblTitle", tLanguageType);
+			string tProgramTitle = MultiLanguage.GetComment("FD", "MAWIODMFPAYMVE01", "lblTitle", tLanguageType);
 			LiteralTitle.Text = tProgramTitle;
 
 			//多國語系
 			
-			this.lblcn.Text = MultiLanguage.GetComment("FD", "MAWIODMFPAYCN03", "lblcn", tLanguageType);
-			this.lblvn.Text = MultiLanguage.GetComment("FD", "MAWIODMFPAYCN03", "lblvn", tLanguageType);
-			this.unit.Text = MultiLanguage.GetComment("FD", "MAWIODMFPAYCN03", "unit", tLanguageType);
 
 			//初始設定
 			#region 增加初始設定
 			ScriptManager.RegisterStartupScript(this, typeof(string), "InitTriggerMust", "InitTriggerMust('');", true);
-ScriptManager.RegisterStartupScript(this, typeof(string), "InitTriggerOpen", "InitTriggerOpen();", true);
 ScriptManager.RegisterStartupScript(this, typeof(string), "InitCalculated", "InitCalculated();", true);
 			#endregion
 		}
@@ -115,7 +111,8 @@ ScriptManager.RegisterStartupScript(this, typeof(string), "InitCalculated", "Ini
 			string strToolTipParameter = objEFPara.EF_getCompanyParameterData("ToolTip").ToString();
 			
 			if(strToolTipParameter=="Y"){
-				this.textarea1.ToolTip = this.textarea1.Text;
+				this.payee.ToolTip = this.payee.Text;
+this.textarea1.ToolTip = this.textarea1.Text;
 this.textarea2.ToolTip = this.textarea2.Text;
 this.textarea3.ToolTip = this.textarea3.Text;
 this.textarea4.ToolTip = this.textarea4.Text;
@@ -128,29 +125,27 @@ this.textarea5.ToolTip = this.textarea5.Text;
 			SetToolBarButtonVisiable(ButtonStyleType.BtnAdd, false);
 
 
-            #region 自訂Page_Prender區塊
-
-            //20230510 Peggy  Star
-            ScriptManager.RegisterStartupScript(this, typeof(string), Guid.NewGuid().ToString(), "openRadio();", true);
-            #endregion 自訂Page_Prender區塊
-            //20230510 Peggy  End
+			
+#region 自訂下拉選項
+			
+			#endregion 自訂下拉選項
 
 
-            base._Page_PreRender(sender, e);
+
+base._Page_PreRender(sender, e);
 
 			#region 與管理程式共用After Prender區段
 			//單頭RadioButton控制項 start
-			chkven.Attributes["style"] = "display:none;";
-			chkven_ctrolRadio0.Checked = (chkven.Value == "0"); chkven_ctrolRadio0.Enabled = chkven.InputEnabled;
-			chkven_ctrolRadio1.Checked = (chkven.Value == "1"); chkven_ctrolRadio1.Enabled = chkven.InputEnabled;
 			chpay.Attributes["style"] = "display:none;";
 			chpay_ctrolRadio0.Checked = (chpay.Value == "0"); chpay_ctrolRadio0.Enabled = chpay.InputEnabled;
 			chpay_ctrolRadio1.Checked = (chpay.Value == "1"); chpay_ctrolRadio1.Enabled = chpay.InputEnabled;
 			chpay_ctrolRadio2.Checked = (chpay.Value == "2"); chpay_ctrolRadio2.Enabled = chpay.InputEnabled;
-			kind.Attributes["style"] = "display:none;";
-			kind_ctrolRadio0.Checked = (kind.Value == "0"); kind_ctrolRadio0.Enabled = kind.InputEnabled;
-			kind_ctrolRadio1.Checked = (kind.Value == "1"); kind_ctrolRadio1.Enabled = kind.InputEnabled;
-			kind_ctrolRadio2.Checked = (kind.Value == "2"); kind_ctrolRadio2.Enabled = kind.InputEnabled;
+			rdtc.Attributes["style"] = "display:none;";
+			rdtc_ctrolRadio0.Checked = (rdtc.Value == "0"); rdtc_ctrolRadio0.Enabled = rdtc.InputEnabled;
+			rdtc_ctrolRadio1.Checked = (rdtc.Value == "1"); rdtc_ctrolRadio1.Enabled = rdtc.InputEnabled;
+			rdtc_ctrolRadio2.Checked = (rdtc.Value == "2"); rdtc_ctrolRadio2.Enabled = rdtc.InputEnabled;
+			rdtc_ctrolRadio3.Checked = (rdtc.Value == "3"); rdtc_ctrolRadio3.Enabled = rdtc.InputEnabled;
+			rdtc_ctrolRadio4.Checked = (rdtc.Value == "4"); rdtc_ctrolRadio4.Enabled = rdtc.InputEnabled;
 
 
 			//單頭RadioButton控制項 end
@@ -162,6 +157,7 @@ this.chkitem04.Text = String.Empty;
 this.chkitem05.Text = String.Empty;
 this.chkatt01.Text = String.Empty;
 this.chkatt02.Text = String.Empty;
+this.chkatt03.Text = String.Empty;
 this.chkatt04.Text = String.Empty;
 this.chkatt05.Text = String.Empty;
 this.other.Text = String.Empty;
@@ -245,14 +241,39 @@ this.other.Text = String.Empty;
 			}
 
 			/*Grid0 Setting Start*/
+			chkitem01.Attributes.Add("style", "display:none;");
+			chkitem02.Attributes.Add("style", "display:none;");
+			chkitem03.Attributes.Add("style", "display:none;");
+			chkitem04.Attributes.Add("style", "display:none;");
+			chkitem05.Attributes.Add("style", "display:none;");
 			empl1.Attributes.Add("style", "display:none;");
 			empl2.Attributes.Add("style", "display:none;");
 
+		if(listGrid0HeaderString.Contains("chkitem01"))
+			listGrid0HeaderString.Remove("chkitem01");
+		if(listGrid0HeaderString.Contains("chkitem02"))
+			listGrid0HeaderString.Remove("chkitem02");
+		if(listGrid0HeaderString.Contains("chkitem03"))
+			listGrid0HeaderString.Remove("chkitem03");
+		if(listGrid0HeaderString.Contains("chkitem04"))
+			listGrid0HeaderString.Remove("chkitem04");
+		if(listGrid0HeaderString.Contains("chkitem05"))
+			listGrid0HeaderString.Remove("chkitem05");
 		if(listGrid0HeaderString.Contains("empl1"))
 			listGrid0HeaderString.Remove("empl1");
 		if(listGrid0HeaderString.Contains("empl2"))
 			listGrid0HeaderString.Remove("empl2");
 
+		if (GridUserControl0.HeaderShown.Contains("chkitem01"))
+			GridUserControl0.HeaderShown.Remove("chkitem01");
+		if (GridUserControl0.HeaderShown.Contains("chkitem02"))
+			GridUserControl0.HeaderShown.Remove("chkitem02");
+		if (GridUserControl0.HeaderShown.Contains("chkitem03"))
+			GridUserControl0.HeaderShown.Remove("chkitem03");
+		if (GridUserControl0.HeaderShown.Contains("chkitem04"))
+			GridUserControl0.HeaderShown.Remove("chkitem04");
+		if (GridUserControl0.HeaderShown.Contains("chkitem05"))
+			GridUserControl0.HeaderShown.Remove("chkitem05");
 		if (GridUserControl0.HeaderShown.Contains("empl1"))
 			GridUserControl0.HeaderShown.Remove("empl1");
 		if (GridUserControl0.HeaderShown.Contains("empl2"))
@@ -312,9 +333,8 @@ this.other.Text = String.Empty;
 			//自訂grid顯示的欄位
 			#region 單頭
 
-			GridUserControl0.ShowColumns("odmfpaycn03001");
-			GridUserControl0.ShowColumns("odmfpaycn03002");
-			GridUserControl0.ShowColumns("kind", gridUserControl.GridColumnType.DropDownList,"0=" + MultiLanguage.GetComment("FD", "ODMFPAYCN03", "kind_0", UserInfo.Language) + "§" + "1=" + MultiLanguage.GetComment("FD", "ODMFPAYCN03", "kind_1", UserInfo.Language) + "§" + "2=" + MultiLanguage.GetComment("FD", "ODMFPAYCN03", "kind_2", UserInfo.Language));
+			GridUserControl0.ShowColumns("odmfpaymve01001");
+			GridUserControl0.ShowColumns("odmfpaymve01002");
 			GridUserControl0.ShowColumns("datetime1", 70, gridUserControl.GridColumnType.DateTime, "yyyy/MM/dd");
 			GridUserControl0.ShowColumns("dept");
 			GridUserControl0.ShowColumns("username");
@@ -325,56 +345,39 @@ this.other.Text = String.Empty;
 			GridUserControl0.ShowColumns("chkitem04", gridUserControl.GridColumnType.DropDownList,"1=Y§0=N");
 			GridUserControl0.ShowColumns("chkitem05", gridUserControl.GridColumnType.DropDownList,"1=Y§0=N");
 			GridUserControl0.ShowColumns("chkother");
-			GridUserControl0.ShowColumns("chpay", gridUserControl.GridColumnType.DropDownList,"0=" + MultiLanguage.GetComment("FD", "ODMFPAYCN03", "chpay_0", UserInfo.Language) + "§" + "1=" + MultiLanguage.GetComment("FD", "ODMFPAYCN03", "chpay_1", UserInfo.Language) + "§" + "2=" + MultiLanguage.GetComment("FD", "ODMFPAYCN03", "chpay_2", UserInfo.Language));
-			GridUserControl0.ShowColumns("payother");
-			GridUserControl0.ShowColumns("orderno");
 			GridUserControl0.ShowColumns("textarea1");
-			GridUserControl0.ShowColumns("opentype01");
-			GridUserControl0.ShowColumns("opentype01C");
-			GridUserControl0.ShowColumns("openitem01");
-			GridUserControl0.ShowColumns("openitem01C");
 			GridUserControl0.ShowColumns("money01");
 			GridUserControl0.ShowColumns("textarea2");
-			GridUserControl0.ShowColumns("opentype02");
-			GridUserControl0.ShowColumns("opentype02C");
-			GridUserControl0.ShowColumns("openitem02");
-			GridUserControl0.ShowColumns("openitem02C");
 			GridUserControl0.ShowColumns("money02");
 			GridUserControl0.ShowColumns("textarea3");
-			GridUserControl0.ShowColumns("opentype03");
-			GridUserControl0.ShowColumns("opentype03C");
-			GridUserControl0.ShowColumns("openitem03");
-			GridUserControl0.ShowColumns("openitem03C");
 			GridUserControl0.ShowColumns("money03");
 			GridUserControl0.ShowColumns("textarea4");
-			GridUserControl0.ShowColumns("opentype04");
-			GridUserControl0.ShowColumns("opentype04C");
-			GridUserControl0.ShowColumns("openitem04");
-			GridUserControl0.ShowColumns("openitem04C");
 			GridUserControl0.ShowColumns("money04");
 			GridUserControl0.ShowColumns("textarea5");
-			GridUserControl0.ShowColumns("opentype05");
-			GridUserControl0.ShowColumns("opentype05C");
-			GridUserControl0.ShowColumns("openitem05");
-			GridUserControl0.ShowColumns("openitem05C");
 			GridUserControl0.ShowColumns("money05");
 			GridUserControl0.ShowColumns("mtotal");
 			GridUserControl0.ShowColumns("chkatt01", gridUserControl.GridColumnType.DropDownList,"1=Y§0=N");
 			GridUserControl0.ShowColumns("inv01");
 			GridUserControl0.ShowColumns("chkatt02", gridUserControl.GridColumnType.DropDownList,"1=Y§0=N");
-			GridUserControl0.ShowColumns("chkatt04", gridUserControl.GridColumnType.DropDownList,"1=Y§0=N");
-			GridUserControl0.ShowColumns("empl1");
-			GridUserControl0.ShowColumns("empl1C");
 			GridUserControl0.ShowColumns("inv02");
+			GridUserControl0.ShowColumns("chkatt03", gridUserControl.GridColumnType.DropDownList,"1=Y§0=N");
+			GridUserControl0.ShowColumns("chkatt04", gridUserControl.GridColumnType.DropDownList,"1=Y§0=N");
 			GridUserControl0.ShowColumns("chkatt05", gridUserControl.GridColumnType.DropDownList,"1=Y§0=N");
-			GridUserControl0.ShowColumns("empl2");
-			GridUserControl0.ShowColumns("empl2C");
-			GridUserControl0.ShowColumns("other", gridUserControl.GridColumnType.DropDownList,"1=Y§0=N");
+			GridUserControl0.ShowColumns("orderno");
 			GridUserControl0.ShowColumns("attother");
-			GridUserControl0.ShowColumns("curr", gridUserControl.GridColumnType.DropDownList,"RMB=" + MultiLanguage.GetComment("Combo", "ODMFPAYCN03_curr", "RMB", UserInfo.Language) + "§" +"NTD=" + MultiLanguage.GetComment("Combo", "ODMFPAYCN03_curr", "NTD", UserInfo.Language) + "§" +"USD=" + MultiLanguage.GetComment("Combo", "ODMFPAYCN03_curr", "USD", UserInfo.Language));
-			GridUserControl0.ShowColumns("useyear");
-			GridUserControl0.ShowColumns("chkven", gridUserControl.GridColumnType.DropDownList,"0=" + MultiLanguage.GetComment("FD", "ODMFPAYCN03", "chkven_0", UserInfo.Language) + "§" + "1=" + MultiLanguage.GetComment("FD", "ODMFPAYCN03", "chkven_1", UserInfo.Language));
-			GridUserControl0.ShowColumns("tax");
+			GridUserControl0.ShowColumns("chpay", gridUserControl.GridColumnType.DropDownList,"0=" + MultiLanguage.GetComment("FD", "ODMFPAYMVE01", "chpay_0", UserInfo.Language) + "§" + "1=" + MultiLanguage.GetComment("FD", "ODMFPAYMVE01", "chpay_1", UserInfo.Language) + "§" + "2=" + MultiLanguage.GetComment("FD", "ODMFPAYMVE01", "chpay_2", UserInfo.Language));
+			GridUserControl0.ShowColumns("other", gridUserControl.GridColumnType.DropDownList,"1=Y§0=N");
+			GridUserControl0.ShowColumns("payother");
+			GridUserControl0.ShowColumns("empl1");
+			GridUserControl0.ShowColumns("empl2");
+			GridUserControl0.ShowColumns("paydate", 70, gridUserControl.GridColumnType.DateTime, "yyyy/MM/dd");
+			GridUserControl0.ShowColumns("cur01", gridUserControl.GridColumnType.DropDownList,"VND=" + MultiLanguage.GetComment("Combo", "ODMFPAYMVE01_cur01", "VND", UserInfo.Language) + "§" +"USD=" + MultiLanguage.GetComment("Combo", "ODMFPAYMVE01_cur01", "USD", UserInfo.Language));
+			GridUserControl0.ShowColumns("cur03", gridUserControl.GridColumnType.DropDownList,"VND=" + MultiLanguage.GetComment("Combo", "ODMFPAYMVE01_cur03", "VND", UserInfo.Language) + "§" +"USD=" + MultiLanguage.GetComment("Combo", "ODMFPAYMVE01_cur03", "USD", UserInfo.Language));
+			GridUserControl0.ShowColumns("cur02", gridUserControl.GridColumnType.DropDownList,"VND=" + MultiLanguage.GetComment("Combo", "ODMFPAYMVE01_cur02", "VND", UserInfo.Language) + "§" +"USD=" + MultiLanguage.GetComment("Combo", "ODMFPAYMVE01_cur02", "USD", UserInfo.Language));
+			GridUserControl0.ShowColumns("cur04", gridUserControl.GridColumnType.DropDownList,"VND=" + MultiLanguage.GetComment("Combo", "ODMFPAYMVE01_cur04", "VND", UserInfo.Language) + "§" +"USD=" + MultiLanguage.GetComment("Combo", "ODMFPAYMVE01_cur04", "USD", UserInfo.Language));
+			GridUserControl0.ShowColumns("cur05", gridUserControl.GridColumnType.DropDownList,"VND=" + MultiLanguage.GetComment("Combo", "ODMFPAYMVE01_cur05", "VND", UserInfo.Language) + "§" +"USD=" + MultiLanguage.GetComment("Combo", "ODMFPAYMVE01_cur05", "USD", UserInfo.Language));
+			GridUserControl0.ShowColumns("curr", gridUserControl.GridColumnType.DropDownList,"VND=" + MultiLanguage.GetComment("Combo", "ODMFPAYMVE01_curr", "VND", UserInfo.Language) + "§" +"USD=" + MultiLanguage.GetComment("Combo", "ODMFPAYMVE01_curr", "USD", UserInfo.Language));
+			GridUserControl0.ShowColumns("rdtc", gridUserControl.GridColumnType.DropDownList,"0=" + MultiLanguage.GetComment("FD", "ODMFPAYMVE01", "rdtc_0", UserInfo.Language) + "§" + "1=" + MultiLanguage.GetComment("FD", "ODMFPAYMVE01", "rdtc_1", UserInfo.Language) + "§" + "2=" + MultiLanguage.GetComment("FD", "ODMFPAYMVE01", "rdtc_2", UserInfo.Language) + "§" + "3=" + MultiLanguage.GetComment("FD", "ODMFPAYMVE01", "rdtc_3", UserInfo.Language) + "§" + "4=" + MultiLanguage.GetComment("FD", "ODMFPAYMVE01", "rdtc_4", UserInfo.Language));
 			GridUserControl0.ShowColumns("resda019");
 			GridUserControl0.ShowColumns("resda020", gridUserControl.GridColumnType.DropDownList, "1=" + strresda020_1 + "§2=" + strresda020_2 + "§3=" + strresda020_3 + "§4=" + strresda020_4);
 			GridUserControl0.ShowColumns("resda021", gridUserControl.GridColumnType.DropDownList, "1=" + strresda021_1 + "§2=" + strresda021_2 + "§3=" + strresda021_3 + "§4=" + strresda021_4);
@@ -389,67 +392,44 @@ this.other.Text = String.Empty;
 		protected override void settingQBEAdvancedElement()
 		{
 			base.CusQBEAdvancedElements.Clear();
-			base.CusQBEAdvancedElements.Add("odmfpaycn03001");
-			base.CusQBEAdvancedElements.Add("odmfpaycn03002");
-			base.CusQBEAdvancedElements.Add("kind");
+			base.CusQBEAdvancedElements.Add("odmfpaymve01001");
+			base.CusQBEAdvancedElements.Add("odmfpaymve01002");
 			base.CusQBEAdvancedElements.Add("datetime1");
 			base.CusQBEAdvancedElements.Add("dept");
 			base.CusQBEAdvancedElements.Add("username");
 			base.CusQBEAdvancedElements.Add("payee");
-			base.CusQBEAdvancedElements.Add("chkitem01");
-			base.CusQBEAdvancedElements.Add("chkitem02");
-			base.CusQBEAdvancedElements.Add("chkitem03");
-			base.CusQBEAdvancedElements.Add("chkitem04");
-			base.CusQBEAdvancedElements.Add("chkitem05");
 			base.CusQBEAdvancedElements.Add("chkother");
-			base.CusQBEAdvancedElements.Add("chpay");
-			base.CusQBEAdvancedElements.Add("payother");
-			base.CusQBEAdvancedElements.Add("orderno");
 			base.CusQBEAdvancedElements.Add("textarea1");
-			base.CusQBEAdvancedElements.Add("opentype01");
-			base.CusQBEAdvancedElements.Add("opentype01C");
-			base.CusQBEAdvancedElements.Add("openitem01");
-			base.CusQBEAdvancedElements.Add("openitem01C");
 			base.CusQBEAdvancedElements.Add("money01");
 			base.CusQBEAdvancedElements.Add("textarea2");
-			base.CusQBEAdvancedElements.Add("opentype02");
-			base.CusQBEAdvancedElements.Add("opentype02C");
-			base.CusQBEAdvancedElements.Add("openitem02");
-			base.CusQBEAdvancedElements.Add("openitem02C");
 			base.CusQBEAdvancedElements.Add("money02");
 			base.CusQBEAdvancedElements.Add("textarea3");
-			base.CusQBEAdvancedElements.Add("opentype03");
-			base.CusQBEAdvancedElements.Add("opentype03C");
-			base.CusQBEAdvancedElements.Add("openitem03");
-			base.CusQBEAdvancedElements.Add("openitem03C");
 			base.CusQBEAdvancedElements.Add("money03");
 			base.CusQBEAdvancedElements.Add("textarea4");
-			base.CusQBEAdvancedElements.Add("opentype04");
-			base.CusQBEAdvancedElements.Add("opentype04C");
-			base.CusQBEAdvancedElements.Add("openitem04");
-			base.CusQBEAdvancedElements.Add("openitem04C");
 			base.CusQBEAdvancedElements.Add("money04");
 			base.CusQBEAdvancedElements.Add("textarea5");
-			base.CusQBEAdvancedElements.Add("opentype05");
-			base.CusQBEAdvancedElements.Add("opentype05C");
-			base.CusQBEAdvancedElements.Add("openitem05");
-			base.CusQBEAdvancedElements.Add("openitem05C");
 			base.CusQBEAdvancedElements.Add("money05");
 			base.CusQBEAdvancedElements.Add("mtotal");
 			base.CusQBEAdvancedElements.Add("chkatt01");
 			base.CusQBEAdvancedElements.Add("inv01");
 			base.CusQBEAdvancedElements.Add("chkatt02");
-			base.CusQBEAdvancedElements.Add("chkatt04");
-			base.CusQBEAdvancedElements.Add("empl1C");
 			base.CusQBEAdvancedElements.Add("inv02");
+			base.CusQBEAdvancedElements.Add("chkatt03");
+			base.CusQBEAdvancedElements.Add("chkatt04");
 			base.CusQBEAdvancedElements.Add("chkatt05");
-			base.CusQBEAdvancedElements.Add("empl2C");
-			base.CusQBEAdvancedElements.Add("other");
+			base.CusQBEAdvancedElements.Add("orderno");
 			base.CusQBEAdvancedElements.Add("attother");
+			base.CusQBEAdvancedElements.Add("chpay");
+			base.CusQBEAdvancedElements.Add("other");
+			base.CusQBEAdvancedElements.Add("payother");
+			base.CusQBEAdvancedElements.Add("paydate");
+			base.CusQBEAdvancedElements.Add("cur01");
+			base.CusQBEAdvancedElements.Add("cur03");
+			base.CusQBEAdvancedElements.Add("cur02");
+			base.CusQBEAdvancedElements.Add("cur04");
+			base.CusQBEAdvancedElements.Add("cur05");
 			base.CusQBEAdvancedElements.Add("curr");
-			base.CusQBEAdvancedElements.Add("useyear");
-			base.CusQBEAdvancedElements.Add("chkven");
-			base.CusQBEAdvancedElements.Add("tax");
+			base.CusQBEAdvancedElements.Add("rdtc");
 			base.CusQBEAdvancedElements.Add("resda019");
 			base.CusQBEAdvancedElements.Add("resda020");
 			base.CusQBEAdvancedElements.Add("resda021");
@@ -502,15 +482,16 @@ this.other.Text = String.Empty;
 			BackupDeleteRowInfo();
 			base.after_delete(deleteTrans);
 		}
+		
 
 
-        #region setBasicInfo , 設定表單的基本屬性
-        protected override void basicInfo()
+		#region setBasicInfo , 設定表單的基本屬性
+		protected override void basicInfo()
 		{
 			//這個作業的BOID
-			HeadBOID = "MAWIODMFPAYCN03";
+			HeadBOID = "MAWIODMFPAYMVE01";
 			//作業代號
-			TaskId = "MAWIODMFPAYCN03";
+			TaskId = "MAWIODMFPAYMVE01";
 			//有幾個單身 ex.0-->單檔, 1-->雙檔(一個單身), 2-->雙檔(二個單身)
 			DetailDepth = 0;
 		}
@@ -524,46 +505,6 @@ this.other.Text = String.Empty;
 			string tWindowOpenStyle = objEFPara.EF_getCompanyParameterData("WindowOpenStyle").ToString();
 
 			//單頭控制項
-			opentype01.HtmImg.Attributes.Add("onclick",MIMJUtil.getClickParams("opentype01_btn","opentype01_txt","S"));
-			opentype01.TxtInput.Attributes.Add("onblur",MIMJUtil.getBlurParams("opentype01_txt","OpenMIMJ01_20_opentype01","opentype01_txt,openitem01_txt")+ ";InitTriggerOpen();opentype_change();");
-			opentype01.TxtInput.Attributes.Add("onchange","FunOnChange_opentype01();InitTriggerOpen();AddtoHash('opentype01_txt');");
-
-			openitem01.HtmImg.Attributes.Add("onclick",MIMJUtil.getClickParams_Fields("openitem01_btn","opentype01_txt","openitem01_txt","S"));
-			openitem01.TxtInput.Attributes.Add("onblur",MIMJUtil.getBlurParams("openitem01_txt","TrigMIMJ01_05_openitem01","openitem01_txt,opentype01_txt"));
-			openitem01.TxtInput.Attributes.Add("onchange","AddtoHash('openitem01_txt');");
-
-			opentype02.HtmImg.Attributes.Add("onclick",MIMJUtil.getClickParams("opentype02_btn","opentype02_txt","S"));
-			opentype02.TxtInput.Attributes.Add("onblur",MIMJUtil.getBlurParams("opentype02_txt","OpenMIMJ01_20_opentype02","opentype02_txt,openitem02_txt")+ ";InitTriggerOpen();opentype_change();");
-			opentype02.TxtInput.Attributes.Add("onchange","FunOnChange_opentype02();InitTriggerOpen();AddtoHash('opentype02_txt');");
-
-			openitem02.HtmImg.Attributes.Add("onclick",MIMJUtil.getClickParams_Fields("openitem02_btn","opentype02_txt","openitem02_txt","S"));
-			openitem02.TxtInput.Attributes.Add("onblur",MIMJUtil.getBlurParams("openitem02_txt","TrigMIMJ01_05_openitem02","openitem02_txt,opentype02_txt"));
-			openitem02.TxtInput.Attributes.Add("onchange","AddtoHash('openitem02_txt');");
-
-			opentype03.HtmImg.Attributes.Add("onclick",MIMJUtil.getClickParams("opentype03_btn","opentype03_txt","S"));
-			opentype03.TxtInput.Attributes.Add("onblur",MIMJUtil.getBlurParams("opentype03_txt","OpenMIMJ01_20_opentype03","opentype03_txt,openitem03_txt")+ ";InitTriggerOpen();opentype_change();");
-			opentype03.TxtInput.Attributes.Add("onchange","FunOnChange_opentype03();InitTriggerOpen();AddtoHash('opentype03_txt');");
-
-			openitem03.HtmImg.Attributes.Add("onclick",MIMJUtil.getClickParams_Fields("openitem03_btn","opentype03_txt","openitem03_txt","S"));
-			openitem03.TxtInput.Attributes.Add("onblur",MIMJUtil.getBlurParams("openitem03_txt","TrigMIMJ01_05_openitem03","openitem03_txt,opentype03_txt"));
-			openitem03.TxtInput.Attributes.Add("onchange","AddtoHash('openitem03_txt');");
-
-			opentype04.HtmImg.Attributes.Add("onclick",MIMJUtil.getClickParams("opentype04_btn","opentype04_txt","S"));
-			opentype04.TxtInput.Attributes.Add("onblur",MIMJUtil.getBlurParams("opentype04_txt","OpenMIMJ01_20_opentype04","opentype04_txt,openitem04_txt")+ ";InitTriggerOpen();opentype_change();");
-			opentype04.TxtInput.Attributes.Add("onchange","FunOnChange_opentype04();InitTriggerOpen();AddtoHash('opentype04_txt');");
-
-			openitem04.HtmImg.Attributes.Add("onclick",MIMJUtil.getClickParams_Fields("openitem04_btn","opentype04_txt","openitem04_txt","S"));
-			openitem04.TxtInput.Attributes.Add("onblur",MIMJUtil.getBlurParams("openitem04_txt","TrigMIMJ01_05_openitem04","openitem04_txt,opentype04_txt"));
-			openitem04.TxtInput.Attributes.Add("onchange","AddtoHash('openitem04_txt');");
-
-			opentype05.HtmImg.Attributes.Add("onclick",MIMJUtil.getClickParams("opentype05_btn","opentype05_txt","S"));
-			opentype05.TxtInput.Attributes.Add("onblur",MIMJUtil.getBlurParams("opentype05_txt","OpenMIMJ01_20_opentype05","opentype05_txt,openitem05_txt")+ ";InitTriggerOpen();opentype_change();");
-			opentype05.TxtInput.Attributes.Add("onchange","FunOnChange_opentype05();InitTriggerOpen();AddtoHash('opentype05_txt');");
-
-			openitem05.HtmImg.Attributes.Add("onclick",MIMJUtil.getClickParams_Fields("openitem05_btn","opentype05_txt","openitem05_txt","S"));
-			openitem05.TxtInput.Attributes.Add("onblur",MIMJUtil.getBlurParams("openitem05_txt","TrigMIMJ01_05_openitem05","openitem05_txt,opentype05_txt"));
-			openitem05.TxtInput.Attributes.Add("onchange","AddtoHash('openitem05_txt');");
-
 			switch (tWindowOpenStyle){
 				case "2":
 					string tPara = "RESAK§10§" + this.UserInfo.DepartmentId + "§§§";
@@ -650,20 +591,19 @@ this.other.Text = String.Empty;
 				strmoney05_DoMathScript_mtotal_onblur+=";";
 			money05.TxtInput.Attributes.Add("onblur",strmoney05_DoMathScript_mtotal_onblur+"domath_mtotal();");
 
-            //20230510 Peggy 註冊在js建的規則, 於chkitem02
-            this.chkitem02.Attributes.Add("onclick", ";openRadio();");
-            this.chkitem05.Attributes.Add("onclick", " if($('#chkitem05_chk')[0].checked){{$('#chkother').show();}} else{{$('#chkother').hide();}} ");
-			this.chkatt01.Attributes.Add("onclick", " if($('#chkatt01_chk')[0].checked){{$('#inv01').show();}} else{{$('#inv01').hide();}} ");
-			this.chkatt02.Attributes.Add("onclick", " if($('#chkatt02_chk')[0].checked){{$('#inv02').show();}} else{{$('#inv02').hide();}} ");
-			this.other.Attributes.Add("onclick", " if($('#other_chk')[0].checked){{$('#attother').show();}} else{{$('#attother').hide();}} ");
-			this.chkven_ctrolRadio0.Attributes.Add("onclick", "document.getElementById('chkven_txt').value = '0';");
-			this.chkven_ctrolRadio1.Attributes.Add("onclick", "document.getElementById('chkven_txt').value = '1';");
-			this.chpay_ctrolRadio0.Attributes.Add("onclick", "InitTriggerMust('" + "" + "');document.getElementById('chpay_txt').value = '0';");
-			this.chpay_ctrolRadio1.Attributes.Add("onclick", "InitTriggerMust('" + "" + "');document.getElementById('chpay_txt').value = '1';");
-			this.chpay_ctrolRadio2.Attributes.Add("onclick", "InitTriggerMust('" + "" + "');document.getElementById('chpay_txt').value = '2';");
-			this.kind_ctrolRadio0.Attributes.Add("onclick", "document.getElementById('kind_txt').value = '0';");
-			this.kind_ctrolRadio1.Attributes.Add("onclick", "document.getElementById('kind_txt').value = '1';");
-			this.kind_ctrolRadio2.Attributes.Add("onclick", "document.getElementById('kind_txt').value = '2';");
+
+this.chkatt01.Attributes.Add("onclick", " if($('#chkatt01_chk')[0].checked){{$('#inv01').show();}} else{{$('#inv01').hide();}} ");
+this.chkatt02.Attributes.Add("onclick", " if($('#chkatt02_chk')[0].checked){{$('#inv02').show();}} else{{$('#inv02').hide();}} ");
+this.chkatt03.Attributes.Add("onclick", " if($('#chkatt03_chk')[0].checked){{$('#orderno').show();}} else{{$('#orderno').hide();}} ");
+this.other.Attributes.Add("onclick", " if($('#other_chk')[0].checked){{$('#attother').show();}} else{{$('#attother').hide();}} ");
+this.chpay_ctrolRadio0.Attributes.Add("onclick", "InitTriggerMust('" + "" + "');document.getElementById('chpay_txt').value = '0';");
+this.chpay_ctrolRadio1.Attributes.Add("onclick", "InitTriggerMust('" + "" + "');document.getElementById('chpay_txt').value = '1';");
+this.chpay_ctrolRadio2.Attributes.Add("onclick", "InitTriggerMust('" + "" + "');document.getElementById('chpay_txt').value = '2';");
+this.rdtc_ctrolRadio0.Attributes.Add("onclick", "InitTriggerMust('" + "" + "');document.getElementById('rdtc_txt').value = '0';");
+this.rdtc_ctrolRadio1.Attributes.Add("onclick", "InitTriggerMust('" + "" + "');document.getElementById('rdtc_txt').value = '1';");
+this.rdtc_ctrolRadio2.Attributes.Add("onclick", "InitTriggerMust('" + "" + "');document.getElementById('rdtc_txt').value = '2';");
+this.rdtc_ctrolRadio3.Attributes.Add("onclick", "InitTriggerMust('" + "" + "');document.getElementById('rdtc_txt').value = '3';");
+this.rdtc_ctrolRadio4.Attributes.Add("onclick", "InitTriggerMust('" + "" + "');document.getElementById('rdtc_txt').value = '4';");
 		#endregion ========= 表單 SettingClientFunctio =========
 		}
 
@@ -674,16 +614,6 @@ this.other.Text = String.Empty;
 		protected override void buildMiMjManager(Hashtable pMiMjManager)
 		{
 						#region ========= 表單 buildMiMjManager =========
-			pMiMjManager.Add("opentype01_0", opentype01);
-			pMiMjManager.Add("openitem01_0", openitem01);
-			pMiMjManager.Add("opentype02_0", opentype02);
-			pMiMjManager.Add("openitem02_0", openitem02);
-			pMiMjManager.Add("opentype03_0", opentype03);
-			pMiMjManager.Add("openitem03_0", openitem03);
-			pMiMjManager.Add("opentype04_0", opentype04);
-			pMiMjManager.Add("openitem04_0", openitem04);
-			pMiMjManager.Add("opentype05_0", opentype05);
-			pMiMjManager.Add("openitem05_0", openitem05);
 			pMiMjManager.Add("empl1_0", empl1);
 			pMiMjManager.Add("empl2_0", empl2);
 			#endregion ========= 表單 buildMiMjManager =========

@@ -54,8 +54,12 @@
 	<script src="../../_Common/JS/jquery-Released.js" type="text/javascript"></script>
 	<!--2013/01/24:3.5.1.44:hiro:S00-20130109001:雙檔作業的單身，支援組合多選開窗。-->
 	<script src="../../_Common/JS/EFCommonFunction.js" type="text/javascript"></script>
+	<!--控制項觸發條件--20230510 Peggy-->
+	 <script src="../../_Common/OEM/JS/OEMSetControl.js" type="text/javascript"></script>
+
 	<script src="MAWIODMFPAYCN03.js" type="text/javascript"></script>
 	<!--2011/01/13:3.2.1.8:hiro:S00-20110112001:修正管理程式欄位計算功能↑-->
+
 	
 </head>
 <body class="badybg2" leftmargin="0" topmargin="0" onload="setIndexChange();bodyLoad();autoMJtest();">
